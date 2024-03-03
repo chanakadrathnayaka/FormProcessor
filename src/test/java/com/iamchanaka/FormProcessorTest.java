@@ -11,13 +11,13 @@ class FormProcessorTest {
   public void createExistingFormFields() {
     List<String> formFields = Arrays.asList("TEXT", "SELECT", "NUMBER");
     for (String formField : formFields) {
-      FormProcessor.processForm(formField);
+      FormProcessor.processFormField(formField);
     }
   }
 
   @Test
   public void createNonExistingFormFields() {
     Assertions.assertThrows(IllegalArgumentException.class,
-        () -> FormProcessor.processForm("DATE"));
+        () -> FormProcessor.processFormField("DATE"));
   }
 }
